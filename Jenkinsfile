@@ -3,6 +3,7 @@ pipeline {
     agent any
 
     tools {
+        jdk 'jdk17'
         maven 'Maven'
     }
 
@@ -23,10 +24,21 @@ pipeline {
         }
 
         stage('Maven Build') {
-            steps {
-                sh 'mvn clean package'
-            }
-        }
+    steps {
+        sh '''
+            echo "Java version:"
+            java -version
+
+            echo "Java compiler version:"
+            javac -version
+
+            echo "Maven Java version:"
+            mvn -version
+
+            mvn clean package
+        '''
+    }
+}
 
         stage('SonarQube Analysis') {
             steps {
