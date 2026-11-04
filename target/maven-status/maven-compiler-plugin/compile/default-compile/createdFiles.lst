@@ -1,0 +1,3 @@
+com\vedit\educationapp\model\Student.class
+com\vedit\educationapp\controller\StudentController.class
+com\vedit\educationapp\EducationAppApplication.class
