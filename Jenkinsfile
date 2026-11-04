@@ -8,8 +8,8 @@ pipeline {
     }
 
     environment {
-        DOCKER_IMAGE = 'nanducjc123/educationapprepo'
-        SONAR_HOST = 'http://13.50.232.101:9000'
+        DOCKER_IMAGE = 'sakshi0716/docker-repo'
+        SONAR_HOST = 'http://13.235.49.253:9000'
         CONTAINER_NAME = 'educationapp'
         APP_PORT = '8080'
     }
@@ -18,8 +18,8 @@ pipeline {
 
         stage('Git Checkout') {
             steps {
-                git branch: 'master',
-                    url: 'https://github.com/cjcnkolhe/educationapp.git'
+                git branch: 'main',
+                    url: 'https://github.com/sakshiK5002/PipelineAutomation-Project.git'
             }
         }
 
