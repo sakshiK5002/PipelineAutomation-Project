@@ -9,7 +9,7 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = 'sakshi0716/docker-repo'
-        SONAR_HOST = 'http://13.235.49.253:9000'
+        SONAR_HOST = 'http://13.203.192.64:9000'
         CONTAINER_NAME = 'educationapp'
         APP_PORT = '8080'
     }
@@ -97,7 +97,7 @@ pipeline {
             --name educationapp \
             --restart unless-stopped \
             -p 8081:8080 \
-            nanducjc123/educationapprepo:latest
+            sakshi0716/docker-repo:latest
 
             docker ps
         '''
