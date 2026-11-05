@@ -24,21 +24,11 @@ pipeline {
         }
 
         stage('Maven Build') {
-    steps {
-        sh '''
-            echo "Java version:"
-            java -version
+            steps {
+                sh 'mvn clean package'
+            }
+        }
 
-            echo "Java compiler version:"
-            javac -version
-
-            echo "Maven Java version:"
-            mvn -version
-
-            mvn clean package
-        '''
-    }
-}
 
         stage('SonarQube Analysis') {
             steps {
